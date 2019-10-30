@@ -10,17 +10,29 @@
 
 Let's jump right into working with state. For this lab, we are going to render a
 matrix, or grid, of squares. Each square will have only a background color. When
-clicked, the square will change colors. 
+clicked, the square will change colors.
 
 Our component tree consists of a `Matrix`, which renders many `Cells` (squares).
 Our job is to finish implementing `Matrix` so that it renders the appropriate
 amount of cells, with the appropriate amount of values.
 
+## Starter Code
+
+Let's take some time to understand the code base. First, open up the `index.js` file and you'll see that Matrix gets a `values` props of `pattern1` which is imported from `data.js`. Go ahead and open up `data.js` to see what `pattern1` is. You'll see that `pattern1` is a nested array of '#F00' and '#00F' (red and blue).
+
+Not let's look at `Matrix.js`. The `render()` method shows us what our `Matrix` component looks like: a `<div>` tag with `id=matrix`. But inside that div, we invoke `this.genMatrix()`. We see that `genMatrix` in an instance method which maps `this.props.values` to an array of JSX. Basically, every 'row' in `this.props.values` will create a `<div className="row">`. Furthermore,
+if we look at `genRow`, we'll see that every row will map through it's `vals` to create an array of `<div className="cell">` JSX.
+
+In the end, the following HTML is generated:
+![HTML](public/html.png)
+
+Take time to really understand what's going on before tackling the deliverables of this lab. Throw a `console.log` as the first line of `genMatrix` to check what `this.props.values` is. Then throw a `console.log` as the first line of `genRow` to check what `vals` is.
+
 ## Deliverables
 
 ### `Matrix`
 
-`Matrix` uses a prop, `values`, to determine the cell colors. This is a 10 x 10
+`Matrix` should use its prop, `values`, to determine its cell colors. This is a 10 x 10
 array (essentially making 10 rows, with 10 values in each row). Because we are
 responsible React developers, we want to make sure we have a default grid in
 case no `values` prop is passed.
@@ -34,7 +46,7 @@ case no `values` prop is passed.
 
 Create a new component in `src/` called `Cell`. The `Cell` component will give
 us our first chance to use `state`. We want each `Cell` to keep track of a
-single `state` value: `color`, (which will be a 3 digit hex value i.e. '#FFF'). 
+single `state` value: `color`, (which will be a 3 digit hex value i.e. '#FFF').
 
 1. Define a `constructor` method in `Cell`, which sets an initial state key of
    `color` to the `value` prop which is passed from its parent component.
