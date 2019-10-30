@@ -69,15 +69,13 @@ single `state` value: `color`, (which will be a 3 digit hex value i.e. '#FFF').
 1. Define a `constructor` method in `Cell`, which sets an initial state key of
    `color` to the `value` prop which is passed from its parent component.
    Remember to call `super()` on the first line of the constructor (this is
-   required in React components if we are to use `this` in the constructor).
-   Additionally, for props to be accessible within the constructor, we need to
-   pass `props` to both the constructor _as well as_ `super`. Ultimately, our
-   constructor should look something like this:
+   required in React components if we are to use `this.state` in the constructor).
+   Ultimately, our constructor should look something like this:
 
     ```js
     constructor(props) {
-      super(props)
-      // ...define initial state with a key of 'color' set to the 'value' prop
+      super()
+      this.state = {} // ...define initial state with a key of 'color' set to the 'value' prop
     }
     ```
 
