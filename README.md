@@ -99,6 +99,6 @@ single `state` value: `color`, (which will be a 3 digit hex value i.e. '#FFF').
 3. If `pattern1` is passed to `Matrix` in `src/index.js`, then the cells are
    alternating red-blue
 4. When you click on any given cell, that cell's color changes to dark gray
-
+ 
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/react-simple-state-lab'>React Simple State Lab</a> on Learn.co and start learning to code for free.</p>
