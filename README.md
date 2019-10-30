@@ -56,8 +56,9 @@ case no `values` prop is passed.
 
 1. Make a default `values` prop for `Matrix`, which is a 10x10 array filled with
    the values '#F00' (red). For inspiration, take a look at `src/data.js`.
-2. Once you have made your `<Cell />` component, replace the return value in
-   `genRow`'s map to: `<Cell value={val} />`
+2. Once you have made your `Cell` component, replace the return value in
+   `genRow`'s map to: `<Cell value={val} />`. Here we are specifying our `Cell`
+   component should have a `value` prop.
 
 ### `Cell`
 
