@@ -18,10 +18,10 @@ amount of cells, with the appropriate amount of values.
 
 ## Starter Code
 
-Let's take some time to understand the code base. First, open up the `index.js` file and you'll see that Matrix gets a `values` props of `pattern1` which is imported from `data.js`. Go ahead and open up `data.js` to see what `pattern1` is. You'll see that `pattern1` is a nested array of '#F00' and '#00F' (red and blue).
+Let's take some time to understand the code base. First, open up the `index.js` file and you'll see that Matrix gets a `values` prop of `pattern1` which is imported from `data.js`. Go ahead and open up `data.js` to see what `pattern1` is. You'll see that `pattern1` is a nested array of '#F00' and '#00F' (red and blue).
 
-Not let's look at `Matrix.js`. The `render()` method shows us what our `Matrix` component looks like: a `<div>` tag with `id=matrix`. But inside that div, we invoke `this.genMatrix()`. We see that `genMatrix` in an instance method which maps `this.props.values` to an array of JSX. Basically, every 'row' in `this.props.values` will create a `<div className="row">`. Furthermore,
-if we look at `genRow`, we'll see that every row will map through it's `vals` to create an array of `<div className="cell">` JSX.
+Now let's look at `Matrix.js`. The `render()` method shows us what our `Matrix` component looks like: a `<div>` tag with `id=matrix`. But inside that div, we invoke `this.genMatrix()`. We see that `genMatrix` is an instance method which maps `this.props.values` to an array of JSX. Basically, every 'row' in `this.props.values` will create a `<div className="row">`. Furthermore,
+if we look at `genRow`, we'll see that every row will map through its `vals` to create an array of `<div className="cell">` JSX.
  
 In the end, the following HTML is generated (You can run this lab and use Chrome's developer tools to check for yourself):
 ```html
@@ -82,7 +82,7 @@ single `state` value: `color`, (which will be a 3 digit hex value i.e. '#FFF').
 2. `Cell` should render a single `<div>` with a className of `cell`
 3. In render, the cell should set the background color in-line for the `<div>`
    by adding the following attribute: `style={{backgroundColor: '#FFF'}}`
-   ('#FFF' is just used as an example value here - the value should be state's
+   ('#FFF' is just used as an example value here - the value should be the state's
    color)
 4. Create a click listener which, when activated, updates the state to the
    following hex value: '#333'
