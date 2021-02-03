@@ -4,7 +4,7 @@ import Cell from './Cell.js'
 export default class Matrix extends Component {
   
   genRow = (vals) => {
-    // console.log(vals)
+    console.log(vals)
     return vals.map(val => <Cell value={val}/>)
   }
   
@@ -23,7 +23,7 @@ export default class Matrix extends Component {
   
 }
 
-Matrix.defaultProps = {[
+Matrix.defaultProps = { values: [
     ['#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00'],
     ['#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00'],
     ['#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00'],
@@ -34,4 +34,5 @@ Matrix.defaultProps = {[
     ['#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00'],
     ['#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00'],
     ['#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00']
-  ]}
+  ]
+}
